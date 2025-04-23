@@ -110,9 +110,9 @@ export const addComment = createAsyncThunk('posts/addComments', async (data, { r
 // ]
 
 const initialState = {
-    leads: sessionStorage.getItem('leads') !== null ? JSON.parse(sessionStorage.getItem('leads')) : [],
-    agents: sessionStorage.getItem('agents') !== null ? JSON.parse(sessionStorage.getItem('agents')) : [],
-    tags: sessionStorage.getItem('tags') !== null ? JSON.parse(sessionStorage.getItem('tags')) : [],
+    leads: sessionStorage.getItem('leads') !== "undefined" ? JSON.parse(sessionStorage.getItem('leads')) : [],
+    agents: sessionStorage.getItem('agents') !== "undefined" ? JSON.parse(sessionStorage.getItem('agents')) : [],
+    tags: sessionStorage.getItem('tags') !== "undefined" ? JSON.parse(sessionStorage.getItem('tags')) : [],
     status: 'idle',
     error: null
 }
@@ -193,6 +193,7 @@ export const leadSlice = createSlice({
                 state.status = "loading"
             })
             .addCase(fetchAllDetails.fulfilled, (state, { payload }) => {
+                console.log(payload)
                 state.leads = payload.leads
                 state.agents = payload.agents
                 state.tags = payload.tags
