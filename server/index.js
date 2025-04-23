@@ -16,6 +16,12 @@ DBConnection()
 const leadRoute = require('./routes/lead')
 
 app.use('/lead', leadRoute)
+app.use("/", (req, res)=>{
+    return res.status(200).json({
+        success: true,
+        message: "MyCRM Server is running successfully"
+    })
+})
 
 app.listen(PORT, () => {
     console.log(`MyCRM running on port ${PORT}`);
