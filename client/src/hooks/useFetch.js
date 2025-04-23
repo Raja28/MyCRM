@@ -26,7 +26,7 @@ export default function useFetch() {
         try {
             setLoading(true);
             setError(null);
-            const resp = await axios.get(BASEURL + "/filter", {
+            const resp = await axios.get(BASEURL + "lead/filter", {
                 params: queryParams
             })
 
@@ -54,7 +54,7 @@ export default function useFetch() {
         if (searchParams.size > 0) {
             // const query = { status: searchParams.get('status') }
             if (searchParams.get('status')) {
-                console.log(searchParams.get('status'));
+                // console.log(searchParams.get('status'));
 
                 query.status = searchParams.get('status')
             }
