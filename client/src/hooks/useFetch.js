@@ -26,7 +26,7 @@ export default function useFetch() {
         try {
             setLoading(true);
             setError(null);
-            const resp = await axios.get(BASEURL + "lead/filter", {
+            const resp = await axios.get(BASEURL + "/lead/filter", {
                 params: queryParams
             })
 
