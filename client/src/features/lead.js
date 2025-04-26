@@ -193,7 +193,6 @@ export const leadSlice = createSlice({
                 state.status = "loading"
             })
             .addCase(fetchAllDetails.fulfilled, (state, { payload }) => {
-                console.log(payload)
                 state.leads = payload.leads
                 state.agents = payload.agents
                 state.tags = payload.tags
