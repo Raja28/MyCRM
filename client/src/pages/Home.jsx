@@ -55,7 +55,7 @@ export default function Home() {
     })
 
     // useEffect(() => {
-      
+
     //     if (searchParams.size > 0) {
     //         const status = { status: searchParams.get('status') }
     //         fetchData(status)
@@ -65,13 +65,13 @@ export default function Home() {
 
     // }, [searchParams])
     useEffect(() => {
-            if (searchParams.size === 0) {
-                fetchData()
-            }
-        }, [searchParams])
+        if (searchParams.size === 0) {
+            fetchData()
+        }
+    }, [searchParams])
 
     useEffect(() => {
-        
+
         dispatch(fetchAllDetails())
     }, [])
 
@@ -88,7 +88,7 @@ export default function Home() {
 
 
         if (actionRef.current === "addTag" && status === statusSuccess) {
-            console.log(("tag check 2"));
+
             closeTagModalBtnRef.current.click()
             addLeadOpenBtnRef.current.click()
             setNewTag("")
@@ -157,9 +157,10 @@ export default function Home() {
             <section className=" container mt-3 p-0">
                 {/* sidebar */}
                 <div className="d-flex  gap-2 ">
-                    <div className="" style={{ width: "15rem" }}>
+                    {mdScrn < width && <div className="" style={{ width: "15rem" }}>
                         <Sidebar />
                     </div>
+                    }
                     {/* component */}
 
                     <div className=" w-100 ">
@@ -175,28 +176,32 @@ export default function Home() {
                                             <div className="">
                                                 <p className="btn btn-sm position-relative m-0  border-0 fw-semibold">
                                                     New
-                                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                    {status !== "loading" && <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                                         {leads?.filter(lead => lead.status === "New")?.length}
                                                         <span className="visually-hidden">unread messages</span>
                                                     </span>
+                                                    }
                                                 </p>
                                             </div>
                                             <div>
                                                 <p type="" className="btn btn-sm position-relative m-0  border-0 fw-semibold">
                                                     Contacted
-                                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                    {leads?.filter(lead => lead.status == "Contacted")?.length}
-                                                        <span className="visually-hidden">unread messages</span>
-                                                    </span>
+                                                    {status !== "loading" &&
+                                                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                            {leads?.filter(lead => lead.status == "Contacted")?.length}
+                                                            <span className="visually-hidden">unread messages</span>
+                                                        </span>
+                                                    }
                                                 </p>
                                             </div>
                                             <div>
                                                 <p type="" className="btn btn-sm position-relative m-0  border-0 fw-semibold">
                                                     Qualified
-                                                
-                                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                    {leads?.filter(lead => lead.status == "Qualified")?.length}
-                                                    </span>
+                                                    {status !== "loading" &&
+                                                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                            {status !== "loading" && leads?.filter(lead => lead.status == "Qualified")?.length}
+                                                        </span>
+                                                    }
                                                 </p>
                                             </div>
                                         </div>
@@ -235,7 +240,7 @@ export default function Home() {
                             )
                         }
 
-                        <div>
+                        <div className="">
                             {
                                 status === 'loading' ? (
                                     <div className="text-center my-5">
@@ -249,9 +254,6 @@ export default function Home() {
                             }
 
                         </div>
-
-
-
 
                     </div>
 
