@@ -61,7 +61,7 @@ export default function Lead() {
 
         const newParams = new URLSearchParams(searchParams.toString());
         if (value === "all") {
-            console.log("removing", key)
+         
             newParams.delete(key); // removes the `status` param
         } else {
             newParams.set(key, value);
@@ -80,8 +80,8 @@ export default function Lead() {
                 <div className=" mx-auto  text-center">
                     <h4 className="m-0">Lead List</h4>
                 </div>
-                <div className="">
-                    <div className="d-flex gap-3 align-items-center">
+                <div className="" >
+                    <div className="d-flex gap-3 align-items-center" style={{fontSize: "14px"}}>
                         <small className="m-0 fw-semibold " >Filter By:</small>
                         <div className="d-flex gap-3">
                             {/* status */}
@@ -89,8 +89,9 @@ export default function Lead() {
                                 <select
                                     name=""
                                     id=""
+                                    style={{fontSize: "12px", width: "6rem"}}
                                     onChange={(e) => updateFilter("status", e.target.value)}
-                                    className="form-select form-select-sm rounded-pill mb-1" >
+                                    className="form-select form-select-sm rounded-pill mb-1 fs-7" >
                                     <option value="all">--Status--</option>
                                     {
                                         leadStatus.map(status => (
@@ -103,6 +104,7 @@ export default function Lead() {
                                 <select
                                     name="agent"
                                     id=""
+                                    style={{fontSize: "12px", width: "6rem"}}
                                     onChange={(e) => updateFilter("salesAgent", e.target.value)}
                                     className="form-select form-select-sm rounded-pill mb-1" >
                                     <option value="all">--Agent--</option>
@@ -118,6 +120,7 @@ export default function Lead() {
                                 <select
                                     name="tag"
                                     id=""
+                                    style={{fontSize: "12px", width: "6rem"}}
                                     onChange={(e) => updateFilter("tag", e.target.value)}
                                     className="form-select form-select-sm rounded-pill mb-1" >
                                     <option value="all">--Tag--</option>
@@ -133,6 +136,7 @@ export default function Lead() {
                                 <select
                                     name="source"
                                     id=""
+                                    style={{fontSize: "12px", width: "6rem"}}
                                     onChange={(e) => updateFilter("source", e.target.value)}
                                     className="form-select form-select-sm rounded-pill mb-1" >
                                     <option value="all">--Source--</option>
@@ -148,6 +152,7 @@ export default function Lead() {
                                 <select
                                     name="timeToClose"
                                     id=""
+                                    style={{fontSize: "12px", width: "6rem"}}
                                     onChange={(e) => updateFilter("timeToClose", e.target.value)}
                                     className="form-select form-select-sm rounded-pill mb-1" >
                                     <option value="all">--Time--</option>
