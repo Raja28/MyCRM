@@ -39,7 +39,7 @@ export default function Status() {
                         <h4 className="m-0">Status</h4>
                     </div>
                     <div className="">
-                        <div className="d-flex gap-3 align-items-center">
+                        <div className="d-flex gap-3 align-items-center" style={{ fontSize: "14px" }}>
                             <small className="m-0 fw-semibold " >Filter By:</small>
                             <div className="d-flex gap-3">
                                 {/* status */}
@@ -47,6 +47,7 @@ export default function Status() {
                                     <select
                                         name=""
                                         id=""
+                                        style={{ fontSize: "12px", width: "6rem" }}
                                         onChange={(e) => updateFilter("status", e.target.value)}
                                         className="form-select form-select-sm rounded-pill mb-1" >
                                         <option value="all">--Status--</option>
@@ -61,6 +62,7 @@ export default function Status() {
                                     <select
                                         name="agent"
                                         id=""
+                                        style={{ fontSize: "12px", width: "6rem" }}
                                         onChange={(e) => updateFilter("salesAgent", e.target.value)}
                                         className="form-select form-select-sm rounded-pill mb-1" >
                                         <option value="all">--Agent--</option>
@@ -107,6 +109,7 @@ export default function Status() {
                                     <select
                                         name="priority"
                                         id=""
+                                        style={{ fontSize: "12px", width: "6rem" }}
                                         onChange={(e) => updateFilter("priority", e.target.value)}
                                         className="form-select form-select-sm rounded-pill mb-1" >
                                         <option value="all">--Priority--</option>
@@ -122,6 +125,7 @@ export default function Status() {
                                     <select
                                         name="timeToClose"
                                         id=""
+                                        style={{ fontSize: "12px", width: "6rem" }}
                                         onChange={(e) => updateFilter("timeToClose", e.target.value)}
                                         className="form-select form-select-sm rounded-pill mb-1" >
                                         <option value="all">--Time--</option>
