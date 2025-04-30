@@ -39,7 +39,7 @@ export default function Sales() {
                         <h4 className="m-0">Sales</h4>
                     </div>
                     <div className="">
-                        <div className="d-flex gap-3 align-items-center">
+                        <div className="d-flex gap-3 align-items-center" style={{fontSize: "14px"}}>
                             <small className="m-0 fw-semibold " >Filter By:</small>
                             <div className="d-flex gap-3">
                                 {/* status */}
@@ -47,6 +47,7 @@ export default function Sales() {
                                     <select
                                         name=""
                                         id=""
+                                        style={{fontSize: "12px", width: "6rem"}}
                                         onChange={(e) => updateFilter("status", e.target.value)}
                                         className="form-select form-select-sm rounded-pill mb-1" >
                                         <option value="all">--Status--</option>
@@ -61,6 +62,7 @@ export default function Sales() {
                                     <select
                                         name="agent"
                                         id=""
+                                        style={{fontSize: "12px", width: "6rem"}}
                                         onChange={(e) => updateFilter("salesAgent", e.target.value)}
                                         className="form-select form-select-sm rounded-pill mb-1" >
                                         <option value="all">--Agent--</option>
@@ -76,6 +78,7 @@ export default function Sales() {
                                     <select
                                         name="tag"
                                         id=""
+                                        style={{fontSize: "12px", width: "6rem"}}
                                         onChange={(e) => updateFilter("tag", e.target.value)}
                                         className="form-select form-select-sm rounded-pill mb-1" >
                                         <option value="all">--Tag--</option>
@@ -91,6 +94,7 @@ export default function Sales() {
                                     <select
                                         name="source"
                                         id=""
+                                        style={{fontSize: "12px", width: "6rem"}}
                                         onChange={(e) => updateFilter("source", e.target.value)}
                                         className="form-select form-select-sm rounded-pill mb-1" >
                                         <option value="all">--Source--</option>
@@ -107,6 +111,7 @@ export default function Sales() {
                                     <select
                                         name="priority"
                                         id=""
+                                        style={{fontSize: "12px", width: "6rem"}}
                                         onChange={(e) => updateFilter("priority", e.target.value)}
                                         className="form-select form-select-sm rounded-pill mb-1" >
                                         <option value="all">--Priority--</option>
@@ -122,6 +127,7 @@ export default function Sales() {
                                     <select
                                         name="timeToClose"
                                         id=""
+                                        style={{fontSize: "12px", width: "6rem"}}
                                         onChange={(e) => updateFilter("timeToClose", e.target.value)}
                                         className="form-select form-select-sm rounded-pill mb-1" >
                                         <option value="all">--Time--</option>
