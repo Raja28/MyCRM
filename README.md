@@ -79,4 +79,4 @@ Watch video (4 mins): [Loom](https://www.loom.com/share/c8e1c83cbdf9466da52513c0
 git clone https://github.com/Raja28/MyCRM.git
 npm i concurrently
 npm install
-cd run dev
+npm run dev
